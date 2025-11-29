@@ -72,7 +72,7 @@
       footer {
         background: #0b1120;
         border-top: 1px solid #1f2937;
-        padding: 12px 20px;
+        padding: 12px 20px 16px 20px;
         text-align: center;
         font-size: 0.95rem;
       }
@@ -85,6 +85,19 @@
 
       footer a:hover {
         text-decoration: underline;
+      }
+
+      .footer-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-top: 10px;
+      }
+
+      .footer-logos img {
+        height: 40px;
+        object-fit: contain;
       }
     </style>
   </head>
@@ -109,12 +122,36 @@
       </div>
 
       <footer>
-        GitHub repository for this paper:
-        <a href="https://github.com/simionAndrei/<your-repo>" target="_blank">
-          simionAndrei/&lt;your-repo&gt;
-        </a>
+        <div style="margin-bottom: 6px;">
+          GitHub repository for this paper:
+          <a href="https://github.com/simionAndrei/visual_harvest" target="_blank">
+            simionAndrei/&lt;your-repo&gt;
+          </a>
+        </div>
+
+        <div style="margin-bottom: 8px;">
+          Proceedings will appear in:
+          <a href="https://www.actahort.org/" target="_blank">
+            Acta Horticulturae (ISHS)
+          </a>
+        </div>
+
+        <div class="footer-logos">
+          <!-- TU/e Logo -->
+          <img
+            src="https://www.tue.nl/siteassets/images/algemeen/logo/tue_logo_en_white_rgb.png"
+            alt="TU/e Logo"
+          />
+
+          <!-- EHC Logo (local, in docs/) -->
+          <img
+            src="docs/ehc_logo.jpg"
+            alt="European Horticulture Congress Logo"
+          />
+        </div>
       </footer>
     </div>
   </body>
 </html>
+
 
