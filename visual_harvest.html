@@ -39,12 +39,22 @@
         text-decoration: underline;
       }
 
-      .pdf-container {
-        position: absolute;
-        top: 48px; /* nav height */
-        left: 0;
-        right: 0;
-        bottom: 60px; /* space for footer */
+      .page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 48px; /* space for nav */
+      }
+
+      .pdf-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .pdf-object {
+        flex: 1;
+        border: none;
       }
 
       .fallback {
@@ -60,10 +70,6 @@
       }
 
       footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
         background: #0b1120;
         border-top: 1px solid #1f2937;
         padding: 12px 20px;
@@ -88,21 +94,27 @@
       <a href="index.html">Home</a>
     </nav>
 
-    <div class="pdf-container">
-      <embed src="docs/VisualHarvest.pdf" type="application/pdf" width="100%" height="100%">
-      <div class="fallback">
-        <p>Your browser cannot display the PDF.</p>
-        <p>
-          <a href="docs/VisualHarvest.pdf">Download the PDF here</a>.
-        </p>
+    <div class="page">
+      <div class="pdf-wrapper">
+        <object data="docs/VisualHarvest.pdf"
+                type="application/pdf"
+                class="pdf-object">
+          <div class="fallback">
+            <p>Your browser cannot display the PDF.</p>
+            <p>
+              <a href="docs/VisualHarvest.pdf">Download the PDF here</a>.
+            </p>
+          </div>
+        </object>
       </div>
-    </div>
 
-    <footer>
-      GitHub repository for this paper:
-      <a href="https://github.com/simionAndrei/visual_harvest" target="_blank">
-        simionAndrei/<your-repo>
-      </a>
-    </footer>
+      <footer>
+        GitHub repository for this paper:
+        <a href="https://github.com/simionAndrei/<your-repo>" target="_blank">
+          simionAndrei/&lt;your-repo&gt;
+        </a>
+      </footer>
+    </div>
   </body>
 </html>
+
